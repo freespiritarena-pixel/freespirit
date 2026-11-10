@@ -30,6 +30,7 @@ export function Button({
   type = "button",
   onClick,
   disabled,
+  external = false,
 }: {
   href?: string;
   children: ReactNode;
@@ -40,6 +41,8 @@ export function Button({
   type?: "button" | "submit";
   onClick?: () => void;
   disabled?: boolean;
+  /** Open in a new tab (off-site links). */
+  external?: boolean;
 }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
@@ -70,6 +73,7 @@ export function Button({
         className={`absolute inset-0 -translate-x-[101%] rounded-full transition-transform duration-700 ease-[var(--ease-soft)] group-hover/btn:translate-x-0 group-focus-visible/btn:translate-x-0 motion-reduce:transition-none ${s.sweep}`}
       />
       <span className="relative">{children}</span>
+      {external && <span className="sr-only"> (opens in a new tab)</span>}
       {arrow && (
         <ArrowIcon className="relative size-4 transition-transform duration-700 ease-[var(--ease-soft)] group-hover/btn:translate-x-1" />
       )}
@@ -88,6 +92,7 @@ export function Button({
         onMouseMove={onMove}
         onMouseLeave={onLeave}
         onClick={onClick}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {content}
       </MotionLink>

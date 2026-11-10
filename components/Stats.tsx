@@ -43,7 +43,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 
 export function Stats() {
   return (
-    <section data-tone="light" aria-label="Free Spirit at a glance" className="bg-ivory pb-[clamp(3rem,6vw,5rem)] text-navy">
+    <section id="intro" data-tone="light" aria-label="Free Spirit at a glance" className="bg-ivory pb-[clamp(3rem,6vw,5rem)] text-navy">
       <div className="container-x">
         <Stagger as="ul" className="grid grid-cols-2 border-y border-navy/12 lg:grid-cols-4">
           {stats.map((s, i) => {

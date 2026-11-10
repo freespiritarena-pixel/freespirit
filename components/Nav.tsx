@@ -8,6 +8,7 @@ import { nav, site } from "@/content/site";
 import { Horseshoe } from "@/components/illustrations/Marks";
 import { Button } from "@/components/Button";
 import { EASE } from "@/components/motion/primitives";
+import { SideRail } from "@/components/SideRail";
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -60,9 +61,11 @@ export function Nav() {
   const solid = scrolled || open;
 
   return (
+    <>
+    <SideRail />
     <header
       data-tone="dark"
-      className={`fixed inset-x-0 top-0 z-50 text-ivory/90 transition-[background-color,border-color] duration-700 ease-[var(--ease-soft)] ${
+      className={`fixed inset-x-0 top-0 lg:left-[var(--rail-w)] z-50 text-ivory/90 transition-[background-color,border-color] duration-700 ease-[var(--ease-soft)] ${
         solid ? "border-b border-ivory/12 bg-navy" : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -83,7 +86,7 @@ export function Nav() {
               <Link
                 href={l.href}
                 aria-current={current(l.href)}
-                className="link-draw inline-flex min-h-11 items-center text-[0.9375rem] text-ivory/80 transition-colors duration-500 hover:text-ivory aria-[current=page]:bg-[length:100%_1px] aria-[current=page]:text-gold"
+                className="link-draw label inline-flex min-h-11 items-center tracking-[0.2em] text-ivory/80 transition-colors duration-500 hover:text-ivory aria-[current=page]:bg-[length:100%_1px] aria-[current=page]:text-gold"
               >
                 {l.label}
               </Link>
@@ -92,7 +95,7 @@ export function Nav() {
         </ul>
 
         <div className="hidden lg:block">
-          <Button href={nav.cta.href} variant="gold" className="min-h-11 px-6 text-sm">
+          <Button href={nav.cta.href} variant="gold" className="label min-h-11 !rounded-none px-6 !text-xs tracking-[0.2em] [&>span:first-child]:!rounded-none">
             {nav.cta.label}
           </Button>
         </div>
@@ -170,5 +173,6 @@ export function Nav() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }

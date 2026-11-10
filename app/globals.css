@@ -49,10 +49,19 @@
       scroll-behavior: auto;
     }
   }
+  :root {
+    /* Width of the fixed left rail (SideRail), shown from lg up. */
+    --rail-w: 5rem;
+  }
   body {
     background: var(--ivory);
     font-family: var(--font-sans);
     font-feature-settings: "ss01";
+  }
+  @media (min-width: 1024px) {
+    body {
+      padding-left: var(--rail-w);
+    }
   }
 
   /* Tone contexts set focus + selection colours per section */

@@ -49,6 +49,12 @@ export const site = {
     { label: "YouTube", href: "https://youtube.com/" },
   ],
   membership: "Equestrian Canada member",
+  /** Google Maps link for the barn. [replace with the real place link] */
+  directionsHref: "https://www.google.com/maps/search/?api=1&query=Free+Spirit+Riding+Academy",
+  /** Google review link ("Ask for reviews" in Google Business Profile). [replace] */
+  reviewHref: "https://www.google.com/maps/search/?api=1&query=Free+Spirit+Riding+Academy",
+  /** Online booking page. [replace with booking system URL if external] */
+  bookHref: "/contact",
 };
 
 export const nav = {
@@ -59,17 +65,15 @@ export const nav = {
     { label: "Coaches", href: "/#coaches" },
     { label: "Contact", href: "/contact" },
   ],
-  cta: { label: "Book a Trial Lesson", href: "/contact" },
+  cta: { label: "Book Online", href: "/contact" },
 };
 
 export const hero = {
-  headlineLines: ["Where riders", "find their"],
-  emphasis: "stride.",
-  supporting:
-    "Classical riding instruction for children and adults in [City, Province], taught with patience, on horses who are cared for as partners. Begin at any age from five, ride in every season.",
-  primaryCta: { label: "Book a Trial Lesson", href: "#contact" },
-  secondaryCta: { label: "Explore Programs", href: "#programs" },
-  trust: ["Equestrian Canada member", "Certified coaches", "All levels, ages 5+"],
+  eyebrow: "Horse Riding Academy",
+  title: "Free Spirit",
+  primaryCta: { label: "Book Online", href: "/contact" },
+  /** Opens site.reviewHref in a new tab. */
+  reviewCta: { label: "Leave a Review" },
   /** Optional hero photo. When set, it is shown full-bleed with a slow zoom. */
   image: {
     src: undefined,
