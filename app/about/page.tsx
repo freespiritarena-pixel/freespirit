@@ -23,7 +23,6 @@ export default function AboutPage() {
     <PageShell>
       <PageHero content={about.hero} id="about-title" />
 
-      {/* Story */}
       <section data-tone="light" aria-labelledby="story-title" className="section-y bg-ivory text-navy">
         <div className="container-x">
           <SectionHeading number="01" id="story-title" title={story.title} />
