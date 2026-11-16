@@ -86,9 +86,9 @@ export const hero = {
    * baked into the file (1 = no crop).
    */
   video: {
-    src: "/videos/hero.mp4" as string | undefined,
-    poster: "/videos/hero-poster.jpg",
-    alt: "A coach leads a young rider on a bay horse around the indoor arena",
+    src: "/videos/herobg.mp4" as string | undefined,
+    poster: "/videos/herobg-poster.jpg",
+    alt: "Riders jumping in the sand ring, cantering through snow and wading through water, and a herd running across a pasture",
     cropScale: 1,
   },
 };

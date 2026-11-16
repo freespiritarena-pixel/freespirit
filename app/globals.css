@@ -51,7 +51,7 @@
   }
   :root {
     /* Width of the fixed left rail (SideRail), shown from lg up. */
-    --rail-w: 5rem;
+    --rail-w: 4rem;
   }
   body {
     background: var(--ivory);
