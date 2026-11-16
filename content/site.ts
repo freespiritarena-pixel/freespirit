@@ -244,10 +244,16 @@ export const journey = {
   /** Slider under the steps. Wide 21:9 frame on large screens, so landscape photos work best. */
   images: [
     {
-      src: "/images/young-rider-golden-hour.jpg",
-      alt: "A young rider sits on a bay horse in a field at golden hour",
-      caption: "Photo: a young rider's first steps",
-      position: "55% 45%",
+      src: "/images/handler-with-horses.jpg",
+      alt: "A bay and a grey horse walk across an autumn paddock",
+      caption: "Photo: autumn turnout",
+      position: "55% 55%",
+    },
+    {
+      src: "/images/rider-canter-arena.jpg",
+      alt: "A rider canters a chestnut horse across a sandy outdoor arena",
+      caption: "Photo: canter work",
+      position: "55% 35%",
     },
     {
       src: "/images/rider-toward-jumps.jpg",
