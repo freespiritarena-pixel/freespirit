@@ -5,7 +5,6 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ImageSlot } from "@/components/ImageSlot";
 import { Stats } from "@/components/Stats";
-import { Coaches } from "@/components/Coaches";
 import { CtaBand } from "@/components/CtaBand";
 import { Horizon } from "@/components/illustrations/Hills";
 import { MotifArt } from "@/components/illustrations/Marks";
@@ -96,14 +95,6 @@ export default function AboutPage() {
           </ol>
         </div>
       </section>
-
-      <div className="bg-ivory">
-        <Horizon to="navy" />
-      </div>
-      <Coaches number="04" />
-      <div className="bg-navy">
-        <Horizon to="ivory" />
-      </div>
 
       <CtaBand {...about.cta} />
     </PageShell>

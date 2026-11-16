@@ -95,7 +95,7 @@ export function Nav() {
         </ul>
 
         <div className="hidden lg:block">
-          <Button href={nav.cta.href} variant="gold" className="label min-h-11 !rounded-none px-6 !text-xs tracking-[0.2em] [&>span:first-child]:!rounded-none">
+          <Button href={nav.cta.href} variant="gold" className="label !min-h-0 !rounded-none !px-6 !py-3 !text-[10px] tracking-[0.2em] [&>span:first-child]:!rounded-none">
             {nav.cta.label}
           </Button>
         </div>

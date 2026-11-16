@@ -57,13 +57,13 @@ export function Hero() {
         style={{ y: copyY, opacity: copyOpacity }}
         className="container-x relative flex flex-1 flex-col items-center justify-center pb-10 pt-32 text-center"
       >
-        <motion.p {...fade(0.1)} className="label tracking-[0.42em] text-ivory/75">
+        <motion.p {...fade(0.1)} className="label !text-[10px] tracking-[0.34em] text-ivory/75">
           {hero.eyebrow}
         </motion.p>
 
         <h1 id="hero-title" className="mt-6 overflow-hidden pb-[0.12em]">
           <motion.span
-            className="display block text-[clamp(3.75rem,2rem+8vw,9rem)] leading-[0.95] tracking-[-0.02em] text-ivory"
+            className="display block text-[clamp(42px,12.5vw,60px)] md:text-[clamp(28px,5.4vw,108px)] leading-[0.95] tracking-[-0.02em] text-ivory"
             initial={reduce ? { opacity: 0 } : { y: "105%" }}
             animate={reduce ? { opacity: 1 } : { y: "0%" }}
             transition={{ duration: 1.2, ease: EASE, delay: 0.25 }}
@@ -72,12 +72,12 @@ export function Hero() {
           </motion.span>
         </h1>
 
-        <motion.div {...fade(0.7)} className="mt-12 flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-5">
+        <motion.div {...fade(0.7)} className="mt-8 flex flex-row items-center justify-center gap-3 md:gap-4">
           <Button
             href={hero.primaryCta.href}
             variant="gold"
             magnetic
-            className="label !rounded-none px-9 !text-xs tracking-[0.24em] [&>span:first-child]:!rounded-none"
+            className="label !min-h-0 !rounded-none !px-3.5 !py-[9px] md:!px-6 md:!py-3 !text-[9px] tracking-[0.14em] md:!text-[10px] md:tracking-[0.2em] [&>span:first-child]:!rounded-none"
           >
             {hero.primaryCta.label}
           </Button>
@@ -85,7 +85,7 @@ export function Hero() {
             href={site.reviewHref}
             variant="ghost-dark"
             external
-            className="label !rounded-none px-9 !text-xs tracking-[0.24em] [&>span:first-child]:!rounded-none"
+            className="label !min-h-0 !rounded-none !px-3.5 !py-[9px] md:!px-6 md:!py-3 !text-[9px] tracking-[0.14em] md:!text-[10px] md:tracking-[0.2em] [&>span:first-child]:!rounded-none"
           >
             {hero.reviewCta.label}
           </Button>

@@ -55,7 +55,7 @@ function Field({
   );
 }
 
-export function InquiryForm({ number = "08" }: { number?: string } = {}) {
+export function InquiryForm({ number = "07" }: { number?: string } = {}) {
   const [values, setValues] = useState<Inquiry>(emptyInquiry);
   const [errors, setErrors] = useState<InquiryErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof Inquiry, boolean>>>({});

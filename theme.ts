@@ -8,7 +8,7 @@
  *
  * Components never use hex values directly.
  */
-import { Fraunces, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Karla } from "next/font/google";
 
 export const palette = {
   /** Deep blue — dark section ground, text on light sections. Taken from the logo. */
@@ -31,17 +31,18 @@ export const paletteCss = `:root{${Object.entries(palette)
   .join("")}}`;
 
 /** Display serif for headlines, numerals and quotes. */
-export const displayFont = Fraunces({
+export const displayFont = Cormorant_Garamond({
   subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
 /** Clean sans for body copy, labels and UI. */
-export const bodyFont = DM_Sans({
+export const bodyFont = Karla({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-karla",
   display: "swap",
 });

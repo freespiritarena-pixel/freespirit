@@ -39,7 +39,7 @@ export function PageHero({ content, id }: { content: PageHeroContent; id: string
           <Reveal delay={0.08}>
             <h1 id={id} className="display mt-6 text-display text-ivory">
               {title}{" "}
-              <span className="italic text-gold [font-variation-settings:'opsz'_144,'SOFT'_100]">{emphasis}</span>
+              <span className="italic text-gold">{emphasis}</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>

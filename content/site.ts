@@ -62,7 +62,6 @@ export const nav = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Coaches", href: "/#coaches" },
     { label: "Contact", href: "/contact" },
   ],
   cta: { label: "Book Online", href: "/contact" },
@@ -247,64 +246,31 @@ export const academy = {
       title: "Heated indoor arena",
       body: "A [00 × 00 m] indoor arena with all-weather footing, so January lessons happen as planned.",
       image: {
-        src: undefined,
-        alt: "The indoor arena with soft morning light falling across the footing",
-        caption: "Photo: indoor arena, winter morning",
+        src: "/videos/hero-poster.jpg",
+        alt: "A coach leads a young rider on a bay horse around the indoor arena",
+        caption: "Photo: lesson in the indoor arena",
+        position: "55% 50%",
       } as ImageAsset,
     },
     {
       title: "Trails",
       body: "Quiet trails through [woodland and fields] for relaxed hacks and camp walks.",
       image: {
-        src: undefined,
-        alt: "Riders walking along a tree-lined trail",
-        caption: "Photo: trail through the trees",
+        src: "/images/rider-farm-track.jpg",
+        alt: "A rider walks a chestnut horse along a farm track at sunset",
+        caption: "Photo: hacking out along the track",
+        position: "50% 55%",
       } as ImageAsset,
     },
     {
       title: "Heated viewing lounge",
       body: "Watch lessons through the windows with a hot drink, in the warmth.",
       image: {
-        src: undefined,
-        alt: "Families watching a lesson from the heated lounge",
-        caption: "Photo: viewing lounge",
+        src: "/images/rider-canter-arena.jpg",
+        alt: "A rider canters a chestnut horse past the rail of a sandy arena",
+        caption: "Photo: the view from the rail",
+        position: "50% 40%",
       } as ImageAsset,
-    },
-  ],
-};
-
-export const coaches = {
-  title: "Our coaches",
-  intro:
-    "Certified, patient and devoted to the horses. Every coach teaches to the same classical standard.",
-  people: [
-    {
-      name: "[Coach name]",
-      role: "Head Coach",
-      certification: "[Equestrian Canada Competition Coach]",
-      discipline: "Hunter/Jumper",
-      image: { src: undefined, alt: "Portrait of [Coach name]", caption: "Photo: head coach portrait" } as ImageAsset,
-    },
-    {
-      name: "[Coach name]",
-      role: "Dressage Coach",
-      certification: "[Equestrian Canada Instructor]",
-      discipline: "Dressage",
-      image: { src: undefined, alt: "Portrait of [Coach name]", caption: "Photo: coach portrait" } as ImageAsset,
-    },
-    {
-      name: "[Coach name]",
-      role: "Youth Program Lead",
-      certification: "[Equestrian Canada Instructor]",
-      discipline: "Beginner and youth",
-      image: { src: undefined, alt: "Portrait of [Coach name]", caption: "Photo: coach portrait" } as ImageAsset,
-    },
-    {
-      name: "[Coach name]",
-      role: "Barn Manager",
-      certification: "[Equine first aid certified]",
-      discipline: "Horse care and boarding",
-      image: { src: undefined, alt: "Portrait of [Coach name]", caption: "Photo: barn manager portrait" } as ImageAsset,
     },
   ],
 };
@@ -312,12 +278,49 @@ export const coaches = {
 export const seasons = {
   title: "Riding through the seasons",
   intro: "Canadian weather changes the scenery, never the schedule.",
+  /** Each season can carry an optional photo; without one the card shows its colour panel. */
   items: [
-    { name: "Spring", body: "Back outside on fresh footing, with flatwork tune-ups and first shows of the year." },
-    { name: "Summer", body: "Day camps, long evenings in the outdoor ring and quiet trail rides." },
-    { name: "Fall", body: "Crisp air, golden trails and season-end schooling shows." },
-    { name: "Winter", body: "Lessons carry on in the heated indoor arena, while families watch from the lounge." },
-  ],
+    {
+      name: "Spring",
+      body: "Back outside on fresh footing, with flatwork tune-ups and first shows of the year.",
+      image: {
+        src: "/images/herd-spring-pasture.jpg",
+        alt: "Horses and ponies graze on a green hillside under bare spring trees",
+        caption: "Photo: spring pasture",
+        position: "50% 60%",
+      } as ImageAsset,
+    },
+    {
+      name: "Summer",
+      body: "Day camps, long evenings in the outdoor ring and quiet trail rides.",
+      image: {
+        src: "/images/canter-through-water.jpg",
+        alt: "A rider canters a bay horse through shallow water on a summer evening",
+        caption: "Photo: summer evening ride",
+        position: "45% 50%",
+      } as ImageAsset,
+    },
+    {
+      name: "Fall",
+      body: "Crisp air, golden trails and season-end schooling shows.",
+      image: {
+        src: "/images/horses-autumn-field.jpg",
+        alt: "A bay and a grey horse stand in a field ringed by autumn trees",
+        caption: "Photo: autumn field",
+        position: "62% 55%",
+      } as ImageAsset,
+    },
+    {
+      name: "Winter",
+      body: "Lessons carry on in the heated indoor arena, while families watch from the lounge.",
+      image: {
+        src: "/images/paddock-misty-morning.jpg",
+        alt: "Two horses in a pasture on a cold, misty morning",
+        caption: "Photo: misty morning",
+        position: "72% 60%",
+      } as ImageAsset,
+    },
+  ] as { name: string; body: string; image?: ImageAsset }[],
 };
 
 export const testimonials = {
@@ -326,20 +329,20 @@ export const testimonials = {
     {
       quote:
         "Our daughter was nervous around horses. Six months later she grooms, tacks up and trots on her own, and she talks about her pony all week.",
-      name: "[Parent name]",
+      name: "Sarah M.",
       detail: "Parent, Youth Program",
     },
     {
       quote:
         "I came back to riding at forty-five. The coaching is patient and precise, and the horses are clearly happy. It feels like a place that cares.",
-      name: "[Rider name]",
+      name: "David L.",
       detail: "Adult rider, Dressage Foundations",
     },
     {
       quote:
         "We board here because the horses come first. Turnout, feed, footing, communication: everything is done properly, in every season.",
-      name: "[Boarder name]",
-      detail: "Boarder since [year]",
+      name: "Emily R.",
+      detail: "Boarder since 2019",
     },
   ],
 };
@@ -398,10 +401,10 @@ export const about = {
     intro:
       "Free Spirit began with a few school horses and one simple belief: riders learn best when the horse is happy, the coaching is calm and nobody is rushed.",
     image: {
-      src: "/images/horse-riding-sport-with-female-rider.jpg",
-      alt: "A rider in a black jacket and helmet clears a rail on a chestnut horse with a white blaze",
-      caption: "Photo: clearing a rail",
-      position: "50% 30%",
+      src: "/images/young-riders-sunset.jpg",
+      alt: "Two young riders sit on their horses side by side in a field at sunset",
+      caption: "Photo: young riders at sunset",
+      position: "50% 70%",
     },
   } as PageHeroContent,
   story: {
@@ -412,10 +415,10 @@ export const about = {
       "Riders come to us at five and at fifty-five. Some want to show, some want to trail ride, some simply want to spend time with horses. Every one of them gets the same careful start.",
     ],
     image: {
-      src: "/images/outdoor-ring-canter.jpg",
-      alt: "A rider canters a bay horse across the outdoor sand ring, with show jumps and the clubhouse behind",
-      caption: "Photo: outdoor ring and jumps",
-      position: "45% 50%",
+      src: "/images/handler-with-horses.jpg",
+      alt: "A handler walks out to three horses in an autumn paddock",
+      caption: "Photo: morning turnout",
+      position: "40% 60%",
     } as ImageAsset,
     signature: "[Founder name], founder",
   },
@@ -437,7 +440,7 @@ export const about = {
   },
 };
 
-export type GalleryCategory = "Jumping" | "Lessons" | "Arena";
+export type GalleryCategory = "Jumping" | "Lessons" | "Arena" | "Horses";
 
 export const gallery = {
   meta: {
@@ -449,8 +452,14 @@ export const gallery = {
     title: "Life at the",
     emphasis: "barn.",
     intro: "Lessons, jumping days and quiet moments in the ring.",
+    image: {
+      src: "/images/horse-running-free.jpg",
+      alt: "A chestnut horse gallops loose across a golden field toward the camera",
+      caption: "Photo: running free",
+      position: "50% 60%",
+    },
   } as PageHeroContent,
-  categories: ["All", "Jumping", "Lessons", "Arena"] as const,
+  categories: ["All", "Jumping", "Lessons", "Arena", "Horses"] as const,
   /**
    * Add photos here. `shape` sets the tile proportion: tall 4:5, wide 3:2.
    * Each `category` must be one of `categories` above.
@@ -496,6 +505,176 @@ export const gallery = {
         position: "60% 50%",
       } as ImageAsset,
     },
+    {
+      category: "Jumping" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/jump-vertical-sand-ring.jpg",
+        alt: "A rider clears a striped vertical in the sand ring on a bright day",
+        caption: "Over the vertical",
+        position: "50% 40%",
+      } as ImageAsset,
+    },
+    {
+      category: "Lessons" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/young-rider-golden-hour.jpg",
+        alt: "A young rider sits on a bay horse in a field at golden hour",
+        caption: "Golden hour ride",
+        position: "55% 50%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/herd-grazing-clouds.jpg",
+        alt: "Chestnut and white horses graze under a big cloudy sky",
+        caption: "Grazing under big skies",
+        position: "50% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Jumping" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/grey-horse-jump.jpg",
+        alt: "A grey horse and rider jump a rail against a clear sky",
+        caption: "Grey over the rail",
+        position: "50% 35%",
+      } as ImageAsset,
+    },
+    {
+      category: "Lessons" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/rider-canter-arena.jpg",
+        alt: "A rider canters a chestnut horse across a sandy outdoor arena",
+        caption: "Canter work",
+        position: "50% 40%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/horses-autumn-field.jpg",
+        alt: "A bay and a grey horse stand in an autumn field",
+        caption: "Autumn turnout",
+        position: "55% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Arena" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/leading-horse-arena.jpg",
+        alt: "A rider leads a grey horse across the sand arena at sunset",
+        caption: "Walking in",
+        position: "50% 55%",
+      } as ImageAsset,
+    },
+    {
+      category: "Jumping" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/jump-oxer-sunset.jpg",
+        alt: "A rider jumps a bay horse over an oxer in warm evening light",
+        caption: "Evening jumping",
+        position: "35% 45%",
+      } as ImageAsset,
+    },
+    {
+      category: "Lessons" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/canter-through-water.jpg",
+        alt: "A rider canters a bay horse through shallow water, spray flying",
+        caption: "Cooling off",
+        position: "50% 50%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/paddock-evening.jpg",
+        alt: "Two horses walk along the fence line of a paddock in the evening",
+        caption: "Evening paddock",
+        position: "40% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Lessons" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/rider-farm-track.jpg",
+        alt: "A rider walks a chestnut horse along a farm track at sunset",
+        caption: "Hacking out",
+        position: "50% 55%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/paddock-misty-morning.jpg",
+        alt: "A bay and a pinto horse in a pasture on a misty morning",
+        caption: "Misty morning",
+        position: "70% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "wide" as const,
+      image: {
+        src: "/images/herd-spring-pasture.jpg",
+        alt: "Horses and ponies graze on a green hillside under bare trees",
+        caption: "Spring pasture",
+        position: "50% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/handler-with-horses.jpg",
+        alt: "A handler walks out to three horses in an autumn paddock",
+        caption: "Morning turnout",
+        position: "40% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Lessons" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/young-riders-sunset.jpg",
+        alt: "Two young riders sit on their horses side by side in a field at sunset",
+        caption: "Side by side",
+        position: "50% 70%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/horse-running-free.jpg",
+        alt: "A chestnut horse gallops loose across a golden field toward the camera",
+        caption: "Running free",
+        position: "50% 60%",
+      } as ImageAsset,
+    },
+    {
+      category: "Horses" as GalleryCategory,
+      shape: "tall" as const,
+      image: {
+        src: "/images/herd-running.jpg",
+        alt: "A herd of bay horses canters across a green pasture",
+        caption: "The herd at turnout",
+        position: "50% 55%",
+      } as ImageAsset,
+    },
   ],
 };
 
@@ -511,6 +690,12 @@ export const contactPage = {
     emphasis: "first ride.",
     intro:
       "Call, email or send the form below. We reply within one business day, and visitors are always welcome to come and see the barn.",
+    image: {
+      src: "/images/leading-horse-arena.jpg",
+      alt: "A rider leads a grey horse across the sand arena at sunset",
+      caption: "Photo: walking in from the arena",
+      position: "50% 55%",
+    },
   } as PageHeroContent,
   directions:
     "From [nearest city centre], take [Highway 00] north to [Concession Road]. The barn is the second gate on the left, with the white fence.", // [placeholder]

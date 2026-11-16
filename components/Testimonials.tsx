@@ -40,7 +40,7 @@ export function Testimonials() {
       onBlur={() => setHovered(false)}
     >
       <div className="container-x">
-        <SectionHeading number="07" id="testimonials-title" title={testimonials.title} />
+        <SectionHeading number="06" id="testimonials-title" title={testimonials.title} />
 
         <div className="grid-12 mt-[clamp(2.5rem,5vw,4.5rem)]">
           <div className="col-span-12 lg:col-span-9 lg:col-start-4">

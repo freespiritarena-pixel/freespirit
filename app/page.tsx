@@ -7,7 +7,6 @@ import { Programs } from "@/components/Programs";
 import { Approach } from "@/components/Approach";
 import { Journey } from "@/components/Journey";
 import { Academy } from "@/components/Academy";
-import { Coaches } from "@/components/Coaches";
 import { Seasons } from "@/components/Seasons";
 import { Testimonials } from "@/components/Testimonials";
 import { InquiryForm } from "@/components/InquiryForm";
@@ -79,13 +78,6 @@ export default function Home() {
         </div>
         <Journey />
         <Academy />
-        <div className="bg-ivory">
-          <Horizon to="navy" />
-        </div>
-        <Coaches />
-        <div className="bg-navy">
-          <Horizon to="ivory" />
-        </div>
         <Seasons />
         <Testimonials />
         <div className="bg-ivory">

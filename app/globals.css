@@ -12,8 +12,8 @@
   --color-gold: var(--gold);
   --color-ivory: var(--ivory);
 
-  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-sans: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
 
   /* Fluid type scale */
   --text-display: clamp(3.25rem, min(1.6rem + 5.4vw, 8.4svh + 0.5rem), 6rem);
@@ -155,13 +155,11 @@
   .numeral {
     font-family: var(--font-display);
     font-variant-numeric: lining-nums tabular-nums;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
   }
 
   .display {
     font-family: var(--font-display);
-    font-weight: 380;
-    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-weight: 300;
   }
 
   /*
