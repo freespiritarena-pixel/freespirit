@@ -466,10 +466,10 @@ export const about = {
       "Riders come to us at five and at fifty-five. Some want to show, some want to trail ride, some simply want to spend time with horses. Every one of them gets the same careful start.",
     ],
     image: {
-      src: "/images/handler-with-horses.jpg",
-      alt: "A handler walks out to three horses in an autumn paddock",
-      caption: "Photo: morning turnout",
-      position: "40% 60%",
+      src: "/images/rider-pats-horse-meadow.jpg",
+      alt: "A rider in a show jacket pats her bay horse's neck in a hillside meadow at sunset",
+      caption: "Photo: a quiet moment after the ride",
+      position: "50% 60%",
     } as ImageAsset,
     /** Two smaller photos beside the main story photo. */
     supporting: [
