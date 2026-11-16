@@ -20,7 +20,7 @@ export function Programs() {
   return (
     <section id="programs" data-tone="light" aria-labelledby="programs-title" className="section-y bg-ivory pt-[clamp(3rem,6vw,5rem)] text-navy">
       <div className="container-x">
-        <SectionHeading number="01" id="programs-title" title={programs.title} intro={programs.intro} />
+        <SectionHeading number="05" id="programs-title" title={programs.title} intro={programs.intro} />
 
         <div className="grid-12 mt-[clamp(3rem,6vw,5.5rem)] gap-y-10">
           <div className="col-span-12 sm:col-span-8 lg:col-span-3">

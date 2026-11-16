@@ -26,8 +26,22 @@ export default function AboutPage() {
         <div className="container-x">
           <SectionHeading number="01" id="story-title" title={story.title} />
           <div className="grid-12 mt-[clamp(3rem,6vw,5rem)] items-start gap-y-10">
-            <Reveal className="col-span-12 lg:col-span-6">
-              <ImageSlot image={story.image} motif="ring" className="aspect-[4/3] w-full" sizes="(min-width:1024px) 50vw, 100vw" />
+            <Reveal className="col-span-12 grid grid-cols-5 gap-3 sm:gap-4 lg:col-span-6">
+              <ImageSlot
+                image={story.image}
+                motif="ring"
+                className="col-span-3 row-span-2 h-full min-h-[18rem] w-full"
+                sizes="(min-width:1024px) 30vw, 60vw"
+              />
+              {story.supporting.map((img) => (
+                <ImageSlot
+                  key={img.src ?? img.caption}
+                  image={img}
+                  motif="horse"
+                  className="col-span-2 aspect-[4/5] w-full"
+                  sizes="(min-width:1024px) 20vw, 40vw"
+                />
+              ))}
             </Reveal>
             <Reveal delay={0.12} className="col-span-12 lg:col-span-5 lg:col-start-8">
               {story.paragraphs.map((p, i) => (
@@ -57,15 +71,27 @@ export default function AboutPage() {
               <StaggerItem
                 as="li"
                 key={p.name}
-                className="flex flex-col rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-ivory/[0.05] p-7 ring-1 ring-inset ring-ivory/10 sm:p-9"
+                className="flex flex-col overflow-hidden rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-ivory/[0.05] ring-1 ring-inset ring-ivory/10"
               >
+                {p.image && (
+                  <ImageSlot
+                    image={p.image}
+                    tone="dark"
+                    motif={p.motif}
+                    rounded={false}
+                    className="aspect-[3/2] w-full"
+                    sizes="(min-width:768px) 33vw, 100vw"
+                  />
+                )}
+                <div className="flex flex-1 flex-col p-7 sm:p-9">
                 <div className="flex items-center justify-between">
                   <span className="numeral text-base text-gold">{String(i + 1).padStart(2, "0")}</span>
                   <MotifArt motif={p.motif} className="w-20 text-gold/60" />
                 </div>
-                <h3 className="display mt-10 text-h3 text-ivory">{p.name}</h3>
+                <h3 className="display mt-6 text-h3 text-ivory">{p.name}</h3>
                 <p className="mt-2 text-ivory/90">{p.title}</p>
                 <p className="mt-4 leading-relaxed text-ivory/60">{p.body}</p>
+                </div>
               </StaggerItem>
             ))}
           </Stagger>

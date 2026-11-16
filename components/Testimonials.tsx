@@ -64,7 +64,6 @@ export function Testimonials() {
                     <p>{q.quote}</p>
                   </blockquote>
                   <figcaption className="mt-10 flex items-center gap-4">
-                    <span aria-hidden="true" className="h-px w-10 bg-navy/40" />
                     <span>
                       <span className="block font-medium text-navy">{q.name}</span>
                       <span className="block text-[0.9375rem] text-navy/65">{q.detail}</span>

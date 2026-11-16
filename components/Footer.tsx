@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container-x">
         <div className="grid-12 gap-y-12 border-t border-ivory/12 py-[clamp(3.5rem,7vw,6rem)]">
           <div className="col-span-12 md:col-span-6 lg:col-span-4">
-            <Wordmark className="text-ivory" />
+            <Wordmark className="size-28 sm:size-32" />
             <p className="mt-6 max-w-[22rem] leading-relaxed text-ivory/60">{footer.blurb}</p>
             <p className="label mt-8 inline-flex items-center gap-2.5 text-ivory/60">
               <span aria-hidden="true" className="size-1 rounded-full bg-gold" />
@@ -24,7 +24,7 @@ export function Footer() {
               <br />
               {a.city}, {a.region}
               <br />
-              {a.postalCode}
+              {[a.postalCode, a.countryName].filter(Boolean).join(" ")}
             </address>
           </div>
 

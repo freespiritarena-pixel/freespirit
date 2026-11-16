@@ -15,13 +15,20 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const a = site.address;
-  const mapHref = `https://www.openstreetmap.org/?mlat=${site.geo.latitude}&mlon=${site.geo.longitude}#map=14/${site.geo.latitude}/${site.geo.longitude}`;
+  const mapHref = site.directionsHref;
   const cards = [
-    { label: "Call", value: site.phone, href: site.phoneHref },
-    { label: "Email", value: site.email, href: `mailto:${site.email}` },
-    { label: "Visit", value: `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`, href: mapHref, external: true },
-    { label: "Hours", value: site.hours },
-  ];
+    { label: "Call", value: site.phone, href: site.phoneHref, span: "" },
+    { label: "WhatsApp", value: site.phone, href: site.whatsappHref, external: "opens WhatsApp in a new tab", span: "" },
+    { label: "Email", value: site.email, href: `mailto:${site.email}`, span: "" },
+    {
+      label: "Visit",
+      value: [a.street, a.city, [a.region, a.postalCode].filter(Boolean).join(" "), a.countryName].join(", "),
+      href: mapHref,
+      external: "opens map in a new tab",
+      span: "",
+    },
+    { label: "Hours", value: site.hours, span: "sm:col-span-2 lg:col-span-1" },
+  ] as { label: string; value: string; href?: string; external?: string; span: string }[];
 
   return (
     <PageShell>
@@ -33,25 +40,25 @@ export default function ContactPage() {
           <h2 id="reach-title" className="sr-only">
             Ways to reach us
           </h2>
-          <Stagger as="ul" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
+          <Stagger as="ul" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5" stagger={0.08}>
             {cards.map((c) => (
-              <StaggerItem as="li" key={c.label}>
+              <StaggerItem as="li" key={c.label} className={c.span}>
                 {c.href ? (
                   <a
                     href={c.href}
                     {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="group flex h-full flex-col justify-between gap-10 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 transition-[background-color,box-shadow] duration-700 ease-[var(--ease-soft)] hover:bg-gold/40 hover:ring-gold sm:p-7"
+                    className="group flex h-full flex-col justify-between gap-8 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 transition-[background-color,box-shadow] duration-700 ease-[var(--ease-soft)] hover:bg-gold/40 hover:ring-gold sm:p-6 lg:p-5"
                   >
                     <span className="label text-navy/60">{c.label}</span>
-                    <span className="display break-words text-[1.375rem] leading-snug">
+                    <span className="display break-words text-[1.375rem] leading-snug lg:text-[1.0625rem] xl:text-[1.1875rem]">
                       <span className="link-draw">{c.value}</span>
-                      {c.external && <span className="sr-only"> (opens map in a new tab)</span>}
+                      {c.external && <span className="sr-only"> ({c.external})</span>}
                     </span>
                   </a>
                 ) : (
-                  <div className="flex h-full flex-col justify-between gap-10 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 sm:p-7">
+                  <div className="flex h-full flex-col justify-between gap-8 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 sm:p-6 lg:p-5">
                     <span className="label text-navy/60">{c.label}</span>
-                    <span className="display text-[1.375rem] leading-snug">{c.value}</span>
+                    <span className="display text-[1.375rem] leading-snug lg:text-[1.0625rem] xl:text-[1.1875rem]">{c.value}</span>
                   </div>
                 )}
               </StaggerItem>

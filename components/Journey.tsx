@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { journey } from "@/content/site";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/motion/primitives";
-import { ImageSlot } from "@/components/ImageSlot";
+import { ImageSlider } from "@/components/ImageSlider";
 
 export function Journey() {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export function Journey() {
   return (
     <section id="journey" data-tone="light" aria-labelledby="journey-title" className="section-y bg-ivory text-navy">
       <div className="container-x">
-        <SectionHeading number="03" id="journey-title" title={journey.title} intro={journey.intro} />
+        <SectionHeading number="01" id="journey-title" title={journey.title} intro={journey.intro} />
 
         <div ref={ref} className="relative mt-[clamp(3.5rem,7vw,6rem)]">
           {/* connecting lines: vertical on small screens, horizontal on large */}
@@ -45,9 +45,9 @@ export function Journey() {
         </div>
 
         <Reveal className="mt-[clamp(4rem,8vw,7rem)]">
-          <ImageSlot
-            image={journey.image}
-            motif="poles"
+          <ImageSlider
+            images={journey.images}
+            label="Riders at Free Spirit"
             className="aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[21/9]"
             sizes="(min-width:1440px) 1312px, 100vw"
           />

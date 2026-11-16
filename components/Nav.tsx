@@ -1,21 +1,27 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { nav, site } from "@/content/site";
-import { Horseshoe } from "@/components/illustrations/Marks";
 import { Button } from "@/components/Button";
 import { EASE } from "@/components/motion/primitives";
 import { SideRail } from "@/components/SideRail";
 
-export function Wordmark({ className = "" }: { className?: string }) {
+/** The round Free Spirits crest (cream on transparent), for dark grounds. */
+export function Wordmark({ className = "size-14", priority = false }: { className?: string; priority?: boolean }) {
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <Horseshoe className="size-7 text-gold" />
-      <span className="display text-[1.375rem] leading-none tracking-[-0.01em]">{site.name}</span>
-    </span>
+    <Image
+      src="/logo.png"
+      alt="Free Spirits Horse Academy"
+      width={640}
+      height={640}
+      priority={priority}
+      sizes="(min-width:1024px) 160px, 112px"
+      className={`block shrink-0 ${className}`}
+    />
   );
 }
 
@@ -75,9 +81,9 @@ export function Nav() {
       >
         Skip to content
       </a>
-      <nav aria-label="Primary" className="container-x flex h-[4.5rem] items-center justify-between gap-6">
-        <Link href="/" className="-m-2 flex min-h-11 items-center p-2 text-ivory" aria-label={`${site.name}, home`}>
-          <Wordmark />
+      <nav aria-label="Primary" className="container-x flex h-[5.25rem] items-center justify-between gap-6 lg:h-24">
+        <Link href="/" className="-m-1 flex min-h-11 items-center p-1" aria-label={`${site.name}, home`}>
+          <Wordmark priority className="size-[4.5rem] lg:size-[5.25rem]" />
         </Link>
 
         <ul className="hidden items-center gap-8 lg:flex">
@@ -132,7 +138,7 @@ export function Nav() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu"
-            className="fixed inset-x-0 bottom-0 top-[4.5rem] overflow-y-auto bg-silk lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-[5.25rem] overflow-y-auto bg-silk lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

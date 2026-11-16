@@ -58,7 +58,7 @@ export function SideRail() {
       </ul>
 
       <Link href={site.bookHref} className={`${vertical} py-2`}>
-        Book Online
+        Register Today
       </Link>
     </aside>
   );

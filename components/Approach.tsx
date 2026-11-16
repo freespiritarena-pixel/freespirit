@@ -54,7 +54,6 @@ function Pinned() {
           <div className="col-span-5 flex flex-col">
             <div className="flex items-center gap-4" aria-hidden="true">
               <span className="numeral text-lg text-gold">02</span>
-              <span className="h-px w-14 bg-ivory/25" />
             </div>
             <h2 id="approach-title" className="display mt-8 text-h2 text-ivory">
               {approach.title}
@@ -102,7 +101,6 @@ function Stacked() {
         <div className="col-span-12 lg:col-span-3" aria-hidden="true">
           <div className="flex items-center gap-4 pt-4">
             <span className="numeral text-lg text-gold">02</span>
-            <span className="h-px w-14 bg-ivory/25" />
           </div>
         </div>
         <div className="col-span-12 lg:col-span-8">

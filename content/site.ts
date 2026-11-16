@@ -29,19 +29,24 @@ export const site = {
   tagline: "Horse riding academy",
   url: "https://www.freespirit-riding.ca", // [replace with real domain]
   description:
-    "Free Spirit is a horse riding academy in [City, Province] offering lessons for riders aged 5 and up, youth programs, hunter/jumper and dressage training, summer camps and boarding, with an indoor arena for year-round riding.",
-  phone: "[(000) 000-0000]",
-  phoneHref: "tel:+10000000000",
+    "Free Spirit is a horse riding academy in Rocky View County, just outside Calgary, Alberta, offering lessons for riders aged 5 and up, youth programs, hunter/jumper and dressage training, summer camps and boarding, with an indoor arena for year-round riding.",
+  phone: "+1 (587) 839-2623",
+  phoneHref: "tel:+15878392623",
+  /** Opens a WhatsApp chat with the phone number above. */
+  whatsappHref: "https://wa.me/15878392623",
   email: "hello@freespirit-riding.ca", // [replace]
   address: {
-    street: "[0000 Concession Road]",
-    city: "[City]",
-    region: "[Province]",
-    regionCode: "ON", // [two-letter province code]
-    postalCode: "[A1A 1A1]",
+    street: "283082 Township Road 254",
+    city: "Rocky View County",
+    region: "Alberta",
+    regionCode: "AB",
+    /** Add the postal code here if you want it shown; leave empty to hide it. */
+    postalCode: "",
     country: "CA",
+    countryName: "Canada",
   },
-  geo: { latitude: 43.6532, longitude: -79.3832 }, // [replace with barn coordinates]
+  /** Barn coordinates for search engines. Add exact values to enable; undefined hides them. */
+  geo: undefined as { latitude: number; longitude: number } | undefined,
   hours: "Tuesday to Sunday, 8 am to 8 pm",
   social: [
     { label: "Instagram", href: "https://instagram.com/" },
@@ -50,11 +55,12 @@ export const site = {
   ],
   membership: "Equestrian Canada member",
   /** Google Maps link for the barn. [replace with the real place link] */
-  directionsHref: "https://www.google.com/maps/search/?api=1&query=Free+Spirit+Riding+Academy",
+  directionsHref:
+    "https://www.google.com/maps/search/?api=1&query=283082+Township+Road+254%2C+Rocky+View+County%2C+AB%2C+Canada",
   /** Google review link ("Ask for reviews" in Google Business Profile). [replace] */
   reviewHref: "https://www.google.com/maps/search/?api=1&query=Free+Spirit+Riding+Academy",
   /** Online booking page. [replace with booking system URL if external] */
-  bookHref: "/contact",
+  bookHref: "/#contact",
 };
 
 export const nav = {
@@ -64,13 +70,13 @@ export const nav = {
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
   ],
-  cta: { label: "Book Online", href: "/contact" },
+  cta: { label: "Register Today", href: "/#contact" },
 };
 
 export const hero = {
-  eyebrow: "Horse Riding Academy",
-  title: "Free Spirit",
-  primaryCta: { label: "Book Online", href: "/contact" },
+  eyebrow: "Calgary’s Equestrian Experience",
+  title: "Free Spirits Horse Academy",
+  primaryCta: { label: "Register Today", href: "/#contact" },
   /** Opens site.reviewHref in a new tab. */
   reviewCta: { label: "Leave a Review" },
   /** Optional hero photo. When set, it is shown full-bleed with a slow zoom. */
@@ -173,6 +179,12 @@ export const approach = {
       body:
         "Our horses are partners, not equipment. Sensible workloads, daily turnout, individual feeding and regular vet and farrier care mean the horse you ride is relaxed, sound and willing. Riders learn to read and respect their horse before they ask anything of it.",
       motif: "horseshoe" as Motif,
+      image: {
+        src: "/images/herd-grazing-clouds.jpg",
+        alt: "Chestnut and white horses graze together under a big cloudy sky",
+        caption: "Photo: horses at turnout",
+        position: "55% 60%",
+      } as ImageAsset,
     },
     {
       name: "Technique",
@@ -180,6 +192,12 @@ export const approach = {
       body:
         "Position, balance and clear, quiet aids, taught the classical way. We build correct habits from the first lesson, so every later skill, from a first canter to a course of fences, rests on something solid.",
       motif: "ring" as Motif,
+      image: {
+        src: "/images/rider-canter-arena.jpg",
+        alt: "A rider in a helmet canters a chestnut horse with a balanced, quiet position",
+        caption: "Photo: balanced canter",
+        position: "50% 35%",
+      } as ImageAsset,
     },
     {
       name: "Confidence",
@@ -187,6 +205,12 @@ export const approach = {
       body:
         "Small, deliberate steps, each one mastered before the next. Riders move forward when they are ready, not when the calendar says so, and confidence grows from skill rather than bravado.",
       motif: "poles" as Motif,
+      image: {
+        src: "/images/jump-vertical-sand-ring.jpg",
+        alt: "A rider clears a striped vertical in the sand ring",
+        caption: "Photo: over the vertical",
+        position: "50% 40%",
+      } as ImageAsset,
     },
   ],
 };
@@ -217,20 +241,41 @@ export const journey = {
       body: "A schooling show at home, with your coach beside you at the in-gate.",
     },
   ],
-  image: {
-    src: "/images/rider-toward-jumps.jpg",
-    alt: "A rider canters away across the sand ring toward a line of show jumps",
-    caption: "Photo: rider heading to the jumps",
-    position: "40% 28%",
-  } as ImageAsset,
+  /** Slider under the steps. Wide 21:9 frame on large screens, so landscape photos work best. */
+  images: [
+    {
+      src: "/images/young-rider-golden-hour.jpg",
+      alt: "A young rider sits on a bay horse in a field at golden hour",
+      caption: "Photo: a young rider's first steps",
+      position: "55% 45%",
+    },
+    {
+      src: "/images/rider-toward-jumps.jpg",
+      alt: "A rider canters away across the sand ring toward a line of show jumps",
+      caption: "Photo: rider heading to the jumps",
+      position: "40% 28%",
+    },
+    {
+      src: "/images/jump-vertical-sand-ring.jpg",
+      alt: "A rider clears a striped vertical in the sand ring on a bright day",
+      caption: "Photo: over the vertical",
+      position: "50% 40%",
+    },
+    {
+      src: "/images/jump-oxer-sunset.jpg",
+      alt: "A rider jumps a bay horse over an oxer in warm evening light",
+      caption: "Photo: evening jumping",
+      position: "35% 40%",
+    },
+  ] as ImageAsset[],
 };
 
 export const academy = {
   title: "The academy",
   intro:
     "A working barn built for Canadian weather. Lessons run in every season, and riders and families have a warm place to watch, learn and gather.",
-  location: "[City, Province]",
-  locationNote: "About [00] minutes from [nearest city centre].",
+  location: "Rocky View County, Alberta",
+  locationNote: "Just outside Calgary, at 283082 Township Road 254.",
   facilities: [
     {
       title: "Outdoor ring",
@@ -369,7 +414,7 @@ export const inquiry = {
 };
 
 export const footer = {
-  blurb: "A horse riding academy in [City, Province], teaching classical riding with the horse's welfare first.",
+  blurb: "A horse riding academy in Rocky View County, Alberta, teaching classical riding with the horse's welfare first.",
   languageNote: "Français bientôt disponible",
   legal: `© ${new Date().getFullYear()} Free Spirit Riding Academy. All rights reserved.`,
 };
@@ -392,7 +437,7 @@ export const about = {
   meta: {
     title: "About us",
     description:
-      "The story, values and people behind Free Spirit, a classical horse riding academy in [City, Province].",
+      "The story, values and people behind Free Spirit, a classical horse riding academy in Rocky View County, Alberta.",
   },
   hero: {
     eyebrow: "About us",
@@ -410,7 +455,7 @@ export const about = {
   story: {
     title: "Our story",
     paragraphs: [
-      "[Founder name] opened Free Spirit in [year] on a quiet property outside [City]. The first season had [four] horses, one outdoor ring and a waiting list of local families.", // [placeholder]
+      "[Founder name] opened Free Spirit in [year] on a quiet property outside Calgary. The first season had [four] horses, one outdoor ring and a waiting list of local families.", // [placeholder]
       "Today the academy is home to [25] school horses, a heated indoor arena and a team of certified coaches. The size has changed. The way we teach has not: classical foundations, small steps and the horse's welfare before everything else.", // [placeholder]
       "Riders come to us at five and at fifty-five. Some want to show, some want to trail ride, some simply want to spend time with horses. Every one of them gets the same careful start.",
     ],
@@ -420,6 +465,21 @@ export const about = {
       caption: "Photo: morning turnout",
       position: "40% 60%",
     } as ImageAsset,
+    /** Two smaller photos beside the main story photo. */
+    supporting: [
+      {
+        src: "/images/turnout-paddock.jpg",
+        alt: "Two horses trot across a paddock under an old tree",
+        caption: "Photo: paddock turnout",
+        position: "50% 60%",
+      },
+      {
+        src: "/images/rider-farm-track.jpg",
+        alt: "A rider walks a chestnut horse along a farm track at sunset",
+        caption: "Photo: hacking out",
+        position: "55% 55%",
+      },
+    ] as ImageAsset[],
     signature: "[Founder name], founder",
   },
   milestones: {
@@ -682,7 +742,7 @@ export const contactPage = {
   meta: {
     title: "Contact",
     description:
-      "Book a trial lesson, ask about programs or arrange a visit to Free Spirit horse riding academy in [City, Province].",
+      "Book a trial lesson, ask about programs or arrange a visit to Free Spirit horse riding academy in Rocky View County, Alberta.",
   },
   hero: {
     eyebrow: "Contact",
@@ -698,7 +758,7 @@ export const contactPage = {
     },
   } as PageHeroContent,
   directions:
-    "From [nearest city centre], take [Highway 00] north to [Concession Road]. The barn is the second gate on the left, with the white fence.", // [placeholder]
+    "We are at 283082 Township Road 254 in Rocky View County, just outside Calgary. Use the map link for turn-by-turn directions, and call +1 (587) 839-2623 if you need a hand finding the gate.",
   faqs: [
     {
       q: "What should I wear to a first lesson?",

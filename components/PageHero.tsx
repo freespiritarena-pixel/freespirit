@@ -29,7 +29,7 @@ export function PageHero({ content, id }: { content: PageHeroContent; id: string
                     Home
                   </Link>
                 </li>
-                <li aria-hidden="true" className="h-px w-6 bg-gold/60" />
+                <li aria-hidden="true" className="text-gold/60">/</li>
                 <li aria-current="page" className="text-gold">
                   {eyebrow}
                 </li>
@@ -48,8 +48,8 @@ export function PageHero({ content, id }: { content: PageHeroContent; id: string
         </div>
 
         {image && (
-          <Reveal delay={0.2} className="col-span-12 hidden lg:col-span-4 lg:col-start-9 lg:block">
-            <ImageSlot image={image} tone="dark" priority className="aspect-[4/5] w-full" sizes="(min-width:1024px) 30vw, 0px" />
+          <Reveal delay={0.2} className="col-span-12 lg:col-span-4 lg:col-start-9">
+            <ImageSlot image={image} tone="dark" priority className="aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[4/5]" sizes="(min-width:1024px) 30vw, 100vw" />
           </Reveal>
         )}
       </div>

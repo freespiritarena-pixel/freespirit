@@ -23,6 +23,8 @@ function JsonLd() {
     alternateName: site.name,
     description: site.description,
     url: site.url,
+    logo: `${site.url}/logo.png`,
+    image: `${site.url}/logo.png`,
     telephone: site.phone,
     email: site.email,
     address: {
@@ -30,10 +32,10 @@ function JsonLd() {
       streetAddress: a.street,
       addressLocality: a.city,
       addressRegion: a.regionCode,
-      postalCode: a.postalCode,
+      ...(a.postalCode ? { postalCode: a.postalCode } : {}),
       addressCountry: a.country,
     },
-    geo: { "@type": "GeoCoordinates", latitude: site.geo.latitude, longitude: site.geo.longitude },
+    ...(site.geo ? { geo: { "@type": "GeoCoordinates", latitude: site.geo.latitude, longitude: site.geo.longitude } } : {}),
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -68,7 +70,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Stats />
-        <Programs />
+        <Journey />
         <div className="bg-ivory">
           <Horizon to="navy" />
         </div>
@@ -76,9 +78,9 @@ export default function Home() {
         <div className="bg-navy">
           <Horizon to="ivory" />
         </div>
-        <Journey />
         <Academy />
         <Seasons />
+        <Programs />
         <Testimonials />
         <div className="bg-ivory">
           <Horizon to="navy" />

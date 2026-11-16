@@ -27,7 +27,6 @@ export function SectionHeading({
       <div aria-hidden="true" className="col-span-12 hidden pt-4 lg:col-span-3 lg:block">
         <Reveal y={12} className="flex items-center gap-4">
           <span className={`numeral text-lg ${dark ? "text-gold" : "text-navy"}`}>{number}</span>
-          <span className={`h-px w-14 ${dark ? "bg-ivory/25" : "bg-navy/25"}`} />
         </Reveal>
       </div>
       <div className="col-span-12 lg:col-span-8">

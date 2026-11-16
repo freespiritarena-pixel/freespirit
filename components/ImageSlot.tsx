@@ -78,7 +78,6 @@ export function ImageSlot({
           dark ? "text-ivory/60" : "text-navy/65"
         }`}
       >
-        <span className={`h-px w-6 shrink-0 ${dark ? "bg-ivory/40" : "bg-navy/40"}`} />
         {image.caption}
       </p>
     </div>

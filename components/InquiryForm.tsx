@@ -124,7 +124,6 @@ export function InquiryForm({ number = "07" }: { number?: string } = {}) {
             <span className="numeral text-lg text-gold" aria-hidden="true">
               {number}
             </span>
-            <span className="h-px w-14 bg-ivory/25" aria-hidden="true" />
           </Reveal>
           <Reveal>
             <h2 id="contact-title" className="display mt-8 text-h2 text-ivory">

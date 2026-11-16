@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Horse Riding Academy in [City, Province]`,
+    default: `${site.name} | Horse Riding Academy near Calgary, Alberta`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
