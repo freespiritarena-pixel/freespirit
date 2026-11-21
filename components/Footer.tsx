@@ -61,7 +61,7 @@ export function Footer() {
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <h2 className="label text-ivory/60">Follow</h2>
             <ul className="mt-3 space-y-1">
-              {site.social.map((s) => (
+              {[...site.social, { label: "WhatsApp", href: site.whatsappHref }].map((s) => (
                 <li key={s.label}>
                   <a href={s.href} target="_blank" rel="noopener noreferrer" className="link-draw inline-flex min-h-11 items-center">
                     {s.label}

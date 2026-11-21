@@ -51,7 +51,6 @@ export const site = {
   social: [
     { label: "Instagram", href: "https://instagram.com/" },
     { label: "Facebook", href: "https://facebook.com/" },
-    { label: "YouTube", href: "https://youtube.com/" },
   ],
   membership: "Equestrian Canada member",
   /** Google Maps link for the barn. [replace with the real place link] */
@@ -99,72 +98,97 @@ export const hero = {
   },
 };
 
-/** Stats strip. `value` animates when numeric; `suffix` follows it. */
-export const stats: { value: number | string; suffix?: string; label: string }[] = [
-  { value: 15, suffix: "+", label: "years teaching riders" }, // [placeholder]
-  { value: 300, suffix: "+", label: "riders trained" }, // [placeholder]
-  { value: 25, label: "school horses" }, // [placeholder]
-  { value: "Year-round", label: "heated indoor arena" },
-];
+/**
+ * Horse boarding. Draft copy: details and price are placeholders to confirm. [placeholder]
+ */
+export const boarding = {
+  title: "Horse boarding",
+  intro:
+    "A calm, well-run home for your horse, with the same care our own school horses get every day.",
+  image: {
+    src: "/images/paddock-misty-morning.jpg",
+    alt: "Horses stand in a quiet paddock on a misty morning",
+    caption: "Photo: morning turnout",
+    position: "50% 55%",
+  } as ImageAsset,
+  included: [
+    { title: "Daily turnout", body: "Herd or individual turnout, matched to your horse's temperament." },
+    { title: "Quality hay and feed", body: "Individual feeding plans, fed two to three times a day." },
+    { title: "Stall care", body: "Stalls cleaned daily with fresh bedding." },
+    { title: "Arena access", body: "Ride year-round in the heated indoor arena and the outdoor ring." },
+    { title: "Health care", body: "Vet and farrier visits coordinated on site." },
+    { title: "Blanketing", body: "Blankets changed for the weather through the Alberta winter." },
+  ],
+  price: { amount: "$[000]", unit: "CAD / month" }, // [placeholder]
+  note: "Limited stalls. Ask about availability and training add-ons.",
+  cta: { label: "Ask about boarding", href: "/#contact" },
+};
+
+export type ProgramOption = {
+  name: string;
+  detail: string;
+  amount: string;
+  unit: string;
+};
 
 export const programs = {
   title: "Programs for every rider",
   intro:
-    "Start where you are. Each program builds on the last, so a first lesson can become a lifelong partnership with horses.",
-  image: {
-    src: "/images/jumper-over-rail.jpg",
-    alt: "A rider in a black show jacket guides a chestnut horse over a rail fence",
-    caption: "Photo: hunter/jumper training",
-    position: "50% 35%",
-  } as ImageAsset,
+    "Two programs, each with a group or private option. Every class is one hour, taught by a coach who knows your goals.",
   items: [
     {
-      title: "Beginner Lessons",
-      summary: "Calm, safe first steps on our steadiest school horses.",
-      details:
-        "Private and semi-private lessons covering grooming, tacking up, balance and the walk and trot. Ideal for children 5+ and adults starting fresh.",
-      meta: ["Ages 5+", "30 or 45 min", "From $[00] CAD"],
-      href: "#contact",
+      title: "Beginner Program",
+      summary: "Calm, safe first steps on our steadiest school horses. No experience needed.",
+      tags: ["New riders", "1 hour per class"],
+      options: [
+        { name: "Basic", detail: "4 classes a month, 1 hour each", amount: "$280", unit: "CAD / month" },
+        { name: "Private tutor", detail: "One-to-one with a coach, 1 hour", amount: "$80", unit: "CAD / class" },
+      ] as ProgramOption[],
+      featured: true,
+      cta: { label: "Start as a beginner", href: "/#contact" },
     },
     {
       title: "Youth Program",
-      summary: "Weekly group riding and horsemanship for ages 8 to 17.",
-      details:
-        "Small groups by level, with stable management, horse care and rider theory alongside mounted lessons. Progress is tracked through clear milestones.",
-      meta: ["Ages 8 to 17", "Weekly sessions", "From $[00] CAD / month"],
-      href: "#contact",
+      summary: "Build skill and confidence once the basics are in place.",
+      tags: ["Ages 12+", "1 hour per class", "Riding experience required"],
+      options: [
+        { name: "Class", detail: "1 hour per class", amount: "$80", unit: "CAD / class" },
+        { name: "Private lesson", detail: "One-to-one with a coach, 1 hour", amount: "$100", unit: "CAD / class" },
+      ] as ProgramOption[],
+      featured: false,
+      cta: { label: "Join the youth program", href: "/#contact" },
+    },
+  ],
+};
+
+/** Hourly rentals: horse and arena. Arena price is on request. */
+export const rentals = {
+  title: "Horse and arena rental",
+  intro: "Ride on your own schedule. Both are available by the hour.",
+  items: [
+    {
+      title: "Horse rent",
+      body: "Ride one of our well-schooled horses, tacked up and ready for you.",
+      price: { amount: "$50", unit: "CAD / hour" },
+      image: {
+        src: "/images/8.jpeg",
+        alt: "A rider in a grey jacket sits on a bay horse in a grassy field at golden hour",
+        caption: "Photo: horse rental",
+        position: "50% 55%",
+      } as ImageAsset,
+      cta: { label: "Rent a horse", href: "/#contact" },
     },
     {
-      title: "Hunter/Jumper Training",
-      summary: "Rhythm, track and confidence over fences, from poles to courses.",
-      details:
-        "Gridwork, related distances and course riding for intermediate riders, with a pathway into schooling and rated shows.",
-      meta: ["Intermediate +", "Lessons and clinics", "From $[00] CAD"],
-      href: "#contact",
-    },
-    {
-      title: "Dressage Foundations",
-      summary: "Classical flatwork that makes every rider and horse better.",
-      details:
-        "Position, contact, straightness and the training scale, taught in clear progressions from walk-trot tests upward.",
-      meta: ["All levels", "Private lessons", "From $[00] CAD"],
-      href: "#contact",
-    },
-    {
-      title: "Summer Camps",
-      summary: "Week-long day camps with daily riding and barn life.",
-      details:
-        "Daily lessons, horse care, crafts and trail walks in small groups grouped by age and ability. Spots fill each spring.",
-      meta: ["Ages 6 to 14", "July and August", "From $[000] CAD / week"],
-      href: "#contact",
-    },
-    {
-      title: "Boarding and Training",
-      summary: "Attentive full board with optional training rides.",
-      details:
-        "Daily turnout, quality hay, individual feeding plans and arena access in every season. Training packages available for horse and rider.",
-      meta: ["Full board", "Training add-ons", "From $[0000] CAD / month"],
-      href: "#contact",
+      title: "Arena rent",
+      body: "Book the arena for schooling, practice or your own coach.",
+      price: { amount: "On request", unit: "hourly rate" },
+      image: {
+        src: "/images/outdoor-ring-canter.jpg",
+        alt: "A rider canters a dark bay horse across a sand arena with show jumps behind",
+        caption: "Photo: arena rental",
+        position: "55% 50%",
+      } as ImageAsset,
+      cta: { label: "Ask for arena price", href: "/#contact" },
     },
   ],
 };
@@ -399,23 +423,22 @@ export const testimonials = {
 };
 
 export const inquiry = {
-  title: "Book a trial lesson",
+  title: "Book your appointment",
   intro:
     "Tell us a little about the rider and we will reply within one business day to find a time that suits you.",
-  priceNote: "Trial lessons are 45 minutes, $[00] CAD, all equipment included except boots.",
+  priceNote: "Classes are one hour, with all equipment included except boots.",
   experienceLevels: ["Never ridden", "A few lessons", "Walk, trot and canter", "Jumping or showing"],
   programOptions: [
     "Not sure yet",
-    "Beginner Lessons",
+    "Beginner Program",
     "Youth Program",
-    "Hunter/Jumper Training",
-    "Dressage Foundations",
-    "Summer Camps",
-    "Boarding and Training",
+    "Horse Boarding",
+    "Horse Rental",
+    "Arena Rental",
   ],
   success: {
     title: "Thank you. Your request is in.",
-    body: "We will be in touch within one business day to confirm your trial lesson.",
+    body: "We will be in touch within one business day to confirm your appointment.",
   },
 };
 
@@ -488,20 +511,10 @@ export const about = {
     ] as ImageAsset[],
     signature: "[Founder name], founder",
   },
-  milestones: {
-    title: "Milestones",
-    items: [
-      { year: "[2010]", text: "Free Spirit opens with four school horses and one outdoor ring." },
-      { year: "[2014]", text: "The youth program launches with its first weekly riding groups." },
-      { year: "[2017]", text: "The heated indoor arena opens, and lessons run all winter." },
-      { year: "[2021]", text: "First riders compete at rated hunter/jumper shows." },
-      { year: "[2026]", text: "Over 300 riders trained, and the herd grows to 25 horses." },
-    ], // [placeholder dates]
-  },
   cta: {
     title: "Come and meet the horses.",
-    body: "A trial lesson is the best way to see if Free Spirit is right for you.",
-    primary: { label: "Book a Trial Lesson", href: "/contact" },
+    body: "Booking an appointment is the best way to see if Free Spirit is right for you.",
+    primary: { label: "Book Your Appointment", href: "/contact" },
     secondary: { label: "See the gallery", href: "/gallery" },
   },
 };
@@ -748,12 +761,12 @@ export const contactPage = {
   meta: {
     title: "Contact",
     description:
-      "Book a trial lesson, ask about programs or arrange a visit to Free Spirit horse riding academy in Rocky View County, Alberta.",
+      "Book your appointment, ask about programs or arrange a visit to Free Spirit horse riding academy in Rocky View County, Alberta.",
   },
   hero: {
     eyebrow: "Contact",
-    title: "Let's find your",
-    emphasis: "first ride.",
+    title: "Every big dream starts",
+    emphasis: "with one small ride.",
     intro:
       "Call, email or send the form below. We reply within one business day, and visitors are always welcome to come and see the barn.",
     image: {

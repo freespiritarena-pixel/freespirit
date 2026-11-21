@@ -12,7 +12,7 @@ export function Academy() {
       {/* gold-tint band */}
       <div className="section-y bg-gold/25">
         <div className="container-x">
-          <SectionHeading number="03" id="academy-title" title={academy.title} intro={academy.intro} />
+          <SectionHeading number="06" id="academy-title" title={academy.title} intro={academy.intro} />
 
           <div className="grid-12 mt-[clamp(3rem,6vw,5.5rem)] items-end gap-y-10">
             <Reveal className="col-span-12 lg:col-span-7">

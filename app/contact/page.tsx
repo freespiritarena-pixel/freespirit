@@ -47,18 +47,18 @@ export default function ContactPage() {
                   <a
                     href={c.href}
                     {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="group flex h-full flex-col justify-between gap-8 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 transition-[background-color,box-shadow] duration-700 ease-[var(--ease-soft)] hover:bg-gold/40 hover:ring-gold sm:p-6 lg:p-5"
+                    className="group flex h-full flex-col justify-between gap-8 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 transition-[background-color,box-shadow] duration-700 ease-[var(--ease-soft)] hover:bg-sapphire/[0.14] hover:ring-sapphire/50 sm:p-6 lg:p-5"
                   >
-                    <span className="label text-navy/60">{c.label}</span>
-                    <span className="display break-words text-[1.375rem] leading-snug lg:text-[1.0625rem] xl:text-[1.1875rem]">
+                    <span className="label text-navy/75">{c.label}</span>
+                    <span className="break-words text-[1.125rem] font-medium leading-snug text-navy lg:text-[1rem] xl:text-[1.0625rem]">
                       <span className="link-draw">{c.value}</span>
                       {c.external && <span className="sr-only"> ({c.external})</span>}
                     </span>
                   </a>
                 ) : (
-                  <div className="flex h-full flex-col justify-between gap-8 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 sm:p-6 lg:p-5">
-                    <span className="label text-navy/60">{c.label}</span>
-                    <span className="display text-[1.375rem] leading-snug lg:text-[1.0625rem] xl:text-[1.1875rem]">{c.value}</span>
+                  <div className="flex h-full flex-col justify-between gap-8 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-navy/[0.04] p-6 ring-1 ring-inset ring-navy/10 transition-[background-color,box-shadow] duration-700 ease-[var(--ease-soft)] hover:bg-sapphire/[0.14] hover:ring-sapphire/50 sm:p-6 lg:p-5">
+                    <span className="label text-navy/75">{c.label}</span>
+                    <span className="text-[1.125rem] font-medium leading-snug text-navy lg:text-[1rem] xl:text-[1.0625rem]">{c.value}</span>
                   </div>
                 )}
               </StaggerItem>

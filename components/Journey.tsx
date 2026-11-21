@@ -16,7 +16,7 @@ export function Journey() {
   return (
     <section id="journey" data-tone="light" aria-labelledby="journey-title" className="section-y bg-ivory text-navy">
       <div className="container-x">
-        <SectionHeading number="01" id="journey-title" title={journey.title} intro={journey.intro} />
+        <SectionHeading number="05" id="journey-title" title={journey.title} intro={journey.intro} />
 
         <div ref={ref} className="relative mt-[clamp(3.5rem,7vw,6rem)]">
           {/* connecting lines: vertical on small screens, horizontal on large */}

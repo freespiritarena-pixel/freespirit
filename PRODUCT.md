@@ -12,7 +12,7 @@ Canadian families and adult riders in equal measure. Parents are choosing a safe
 
 ## Product Purpose
 
-Free Spirit is a professional horse riding training academy in Canada. The website introduces the academy and converts interest into a booked trial lesson. Success: a visitor understands the programs, trusts the coaching and horse care, and submits the trial-lesson inquiry.
+Free Spirit is a professional horse riding training academy in Canada. The website introduces the academy and converts interest into a booked appointment. Success: a visitor understands the programs, trusts the coaching and horse care, and submits the appointment inquiry.
 
 ## Positioning
 
@@ -25,7 +25,7 @@ Year-round riding in a Canadian climate (indoor arena for winter, outdoor ring a
 ## Capabilities and Constraints
 
 - Home page only for now; other routes are not built.
-- Trial-lesson inquiry form posts to a stubbed `/api/inquiry` route; no backend or CRM is connected yet.
+- Appointment inquiry form posts to a stubbed `/api/inquiry` route; no backend or CRM is connected yet.
 - Equestrian Canada membership is claimed by the brief.
 - Undecided: real location, stats, coach names, testimonials, pricing, phone, email, social accounts.
 

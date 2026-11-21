@@ -2,8 +2,9 @@ import { MotionProvider } from "@/components/MotionProvider";
 import { site, programs } from "@/content/site";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { Stats } from "@/components/Stats";
+import { Boarding } from "@/components/Boarding";
 import { Programs } from "@/components/Programs";
+import { Rentals } from "@/components/Rentals";
 import { Approach } from "@/components/Approach";
 import { Journey } from "@/components/Journey";
 import { Academy } from "@/components/Academy";
@@ -69,8 +70,7 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <Stats />
-        <Journey />
+        <Boarding />
         <div className="bg-ivory">
           <Horizon to="navy" />
         </div>
@@ -78,9 +78,11 @@ export default function Home() {
         <div className="bg-navy">
           <Horizon to="ivory" />
         </div>
+        <Programs />
+        <Rentals />
+        <Journey />
         <Academy />
         <Seasons />
-        <Programs />
         <Testimonials />
         <div className="bg-ivory">
           <Horizon to="navy" />

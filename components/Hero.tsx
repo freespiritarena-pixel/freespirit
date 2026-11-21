@@ -93,7 +93,7 @@ export function Hero() {
       </motion.div>
 
       <motion.a
-        href="#intro"
+        href="#boarding"
         aria-label="Scroll to content"
         {...fade(1.2)}
         className="relative z-10 mx-auto mb-4 flex size-11 items-center justify-center text-ivory/70 transition-colors duration-500 hover:text-gold"

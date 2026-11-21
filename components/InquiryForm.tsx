@@ -190,7 +190,7 @@ export function InquiryForm({ number = "07" }: { number?: string } = {}) {
                 ref={formRef}
                 noValidate
                 onSubmit={onSubmit}
-                aria-label="Trial lesson request"
+                aria-label="Appointment request"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -240,7 +240,7 @@ export function InquiryForm({ number = "07" }: { number?: string } = {}) {
                 <div className="flex flex-col gap-4 pt-2 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm text-ivory/60">We reply within one business day.</p>
                   <Button type="submit" variant="gold" arrow magnetic disabled={status === "submitting"}>
-                    {status === "submitting" ? "Sending…" : "Request a trial lesson"}
+                    {status === "submitting" ? "Sending…" : "Book your appointment"}
                   </Button>
                 </div>
                 {status === "error" && (

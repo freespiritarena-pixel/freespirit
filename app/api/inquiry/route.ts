@@ -1,7 +1,7 @@
 import { emptyInquiry, validateInquiry, type Inquiry } from "@/lib/inquiry";
 
 /**
- * Trial-lesson inquiry endpoint (stub).
+ * Appointment inquiry endpoint (stub).
  * Validates the payload and logs it. Replace the TODO with your email
  * service, CRM or booking system.
  */
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
   }
 
   // TODO: send to email / CRM. For now, log on the server.
-  console.info("[inquiry] new trial lesson request", { ...data, receivedAt: new Date().toISOString() });
+  console.info("[inquiry] new appointment request", { ...data, receivedAt: new Date().toISOString() });
 
   return Response.json({ ok: true });
 }

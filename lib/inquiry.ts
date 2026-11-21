@@ -1,4 +1,4 @@
-/** Shared trial-lesson inquiry validation, used by the form and the API route. */
+/** Shared appointment inquiry validation, used by the form and the API route. */
 
 export type Inquiry = {
   name: string;

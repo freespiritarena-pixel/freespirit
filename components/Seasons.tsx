@@ -24,7 +24,7 @@ export function Seasons() {
   return (
     <section id="seasons" data-tone="light" aria-labelledby="seasons-title" className="section-y bg-ivory text-navy">
       <div className="container-x">
-        <SectionHeading number="04" id="seasons-title" title={seasons.title} intro={seasons.intro} />
+        <SectionHeading number="07" id="seasons-title" title={seasons.title} intro={seasons.intro} />
 
         <Stagger as="ul" className="mt-[clamp(3rem,6vw,5.5rem)] grid gap-3 sm:grid-cols-2 lg:grid-cols-4" stagger={0.12}>
           {seasons.items.map((s, i) => {

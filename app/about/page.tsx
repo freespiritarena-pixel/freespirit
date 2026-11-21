@@ -4,8 +4,8 @@ import { PageShell } from "@/components/PageShell";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ImageSlot } from "@/components/ImageSlot";
-import { Stats } from "@/components/Stats";
 import { CtaBand } from "@/components/CtaBand";
+import { Boarding } from "@/components/Boarding";
 import { Horizon } from "@/components/illustrations/Hills";
 import { MotifArt } from "@/components/illustrations/Marks";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/primitives";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const { story, milestones } = about;
+  const { story } = about;
   return (
     <PageShell>
       <PageHero content={about.hero} id="about-title" />
@@ -54,8 +54,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <Stats />
 
       <div className="bg-ivory">
         <Horizon to="navy" />
@@ -102,25 +100,7 @@ export default function AboutPage() {
         <Horizon to="ivory" />
       </div>
 
-      {/* Milestones */}
-      <section data-tone="light" aria-labelledby="milestones-title" className="section-y bg-ivory text-navy">
-        <div className="container-x">
-          <SectionHeading number="03" id="milestones-title" title={milestones.title} />
-          <ol className="grid-12 mt-[clamp(3rem,6vw,5rem)]">
-            {milestones.items.map((m, i) => (
-              <Reveal
-                as="li"
-                key={i}
-                delay={i * 0.05}
-                className="col-span-12 grid grid-cols-[6rem_1fr] items-baseline gap-6 border-t border-navy/12 py-7 last:border-b sm:grid-cols-[10rem_1fr] lg:col-span-9 lg:col-start-4"
-              >
-                <span className="numeral text-[clamp(1.75rem,1.3rem+1.4vw,2.5rem)] leading-none text-navy">{m.year}</span>
-                <span className="text-lead text-navy/75">{m.text}</span>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <Boarding number="03" />
 
       <CtaBand {...about.cta} />
     </PageShell>

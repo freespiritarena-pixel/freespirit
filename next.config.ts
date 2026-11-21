@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
+  images: {
+    // AVIF first (~20% smaller than WebP at same visual quality), WebP fallback.
+    formats: ["image/avif", "image/webp"],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

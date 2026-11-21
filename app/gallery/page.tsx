@@ -22,8 +22,8 @@ export default function GalleryPage() {
       </section>
       <CtaBand
         title="See it for yourself."
-        body="Photos only go so far. Book a trial lesson and spend an hour at the barn."
-        primary={{ label: "Book a Trial Lesson", href: "/contact" }}
+        body="Photos only go so far. Book your appointment and spend an hour at the barn."
+        primary={{ label: "Book Your Appointment", href: "/contact" }}
         secondary={{ label: "About the academy", href: "/about" }}
       />
     </PageShell>
