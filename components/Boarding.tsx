@@ -30,18 +30,15 @@ export function Boarding({ number = "01" }: { number?: string }) {
               ))}
             </Stagger>
 
-            <Reveal delay={0.1} className="mt-10 flex flex-col gap-6 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-gold/25 p-6 sm:flex-row sm:items-end sm:justify-between sm:p-8">
+            <Reveal delay={0.1} className="mt-10 flex flex-col gap-5 rounded-[clamp(0.75rem,1.4vw,1.25rem)] bg-gold/25 p-6 sm:p-8">
               <div>
-                <p className="label text-navy/65">Full board from</p>
-                <p className="mt-3 flex items-baseline gap-2">
-                  <span className="numeral text-[clamp(2.25rem,1.8rem+1.6vw,3.25rem)] leading-none tracking-[-0.02em]">
-                    {boarding.price.amount}
-                  </span>
-                  <span className="text-[0.9375rem] text-navy/65">{boarding.price.unit}</span>
+                <p className="label text-navy/65">{boarding.availability.label}</p>
+                <p className="display mt-3 text-[clamp(1.75rem,1.5rem+1vw,2.375rem)] leading-tight tracking-[-0.01em]">
+                  {boarding.availability.title}
                 </p>
-                <p className="mt-3 max-w-[22rem] text-[0.9375rem] leading-relaxed text-navy/65">{boarding.note}</p>
+                <p className="mt-3 text-[0.9375rem] leading-relaxed text-navy/65">{boarding.availability.note}</p>
               </div>
-              <Button href={boarding.cta.href} variant="navy" arrow className="shrink-0">
+              <Button href={boarding.cta.href} variant="navy" arrow className="w-full justify-center">
                 {boarding.cta.label}
               </Button>
             </Reveal>

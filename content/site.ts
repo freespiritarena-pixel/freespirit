@@ -99,29 +99,32 @@ export const hero = {
 };
 
 /**
- * Horse boarding. Draft copy: details and price are placeholders to confirm. [placeholder]
+ * Horse boarding options. Rates are shared on enquiry.
  */
 export const boarding = {
   title: "Horse boarding",
   intro:
-    "A calm, well-run home for your horse, with the same care our own school horses get every day.",
+    "A comfortable, caring and professionally managed home for your horse. Choose from our flexible boarding options designed around your horse's individual needs.",
   image: {
-    src: "/images/paddock-misty-morning.jpg",
-    alt: "Horses stand in a quiet paddock on a misty morning",
-    caption: "Photo: morning turnout",
-    position: "50% 55%",
+    src: "/images/hb.jpeg",
+    alt: "Four horses canter together across a green pasture",
+    caption: "Photo: pasture turnout",
+    position: "50% 60%",
   } as ImageAsset,
   included: [
-    { title: "Daily turnout", body: "Herd or individual turnout, matched to your horse's temperament." },
-    { title: "Quality hay and feed", body: "Individual feeding plans, fed two to three times a day." },
-    { title: "Stall care", body: "Stalls cleaned daily with fresh bedding." },
-    { title: "Arena access", body: "Ride year-round in the heated indoor arena and the outdoor ring." },
-    { title: "Health care", body: "Vet and farrier visits coordinated on site." },
-    { title: "Blanketing", body: "Blankets changed for the weather through the Alberta winter." },
+    { title: "Indoor stall boarding", body: "A comfortable indoor space offering shelter, security and a dedicated place to rest." },
+    { title: "Private paddock boarding", body: "A dedicated outdoor space for your horse to move freely in a private setting." },
+    { title: "Shared paddock boarding", body: "A spacious outdoor environment with companionship and opportunities for socialization." },
+    { title: "Pasture boarding", body: "Open pasture space where your horse can graze, roam and enjoy a natural environment." },
+    { title: "Daily care & nutrition", body: "Quality hay, feeding routines and attentive daily care to support your horse's well-being." },
+    { title: "Additional care options", body: "Blanketing, medication assistance and other personalized care services based on your horse's needs." },
   ],
-  price: { amount: "$[000]", unit: "CAD / month" }, // [placeholder]
-  note: "Limited stalls. Ask about availability and training add-ons.",
-  cta: { label: "Ask about boarding", href: "/#contact" },
+  availability: {
+    label: "Limited boarding spaces available",
+    title: "Your horse's second home.",
+    note: "Contact us for boarding rates and availability.",
+  },
+  cta: { label: "Enquire About Boarding", href: "/#contact" },
 };
 
 export type ProgramOption = {
