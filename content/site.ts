@@ -98,11 +98,13 @@ export const hero = {
   },
 };
 
+export type BoardingIcon = "stall" | "paddock" | "herd" | "pasture" | "feed" | "care";
+
 /**
  * Horse boarding options. Rates are shared on enquiry.
  */
 export const boarding = {
-  title: "Horse boarding",
+  title: "Horse Boarding",
   intro:
     "A comfortable, caring and professionally managed home for your horse. Choose from our flexible boarding options designed around your horse's individual needs.",
   image: {
@@ -112,13 +114,13 @@ export const boarding = {
     position: "50% 60%",
   } as ImageAsset,
   included: [
-    { title: "Indoor stall boarding", body: "A comfortable indoor space offering shelter, security and a dedicated place to rest." },
-    { title: "Private paddock boarding", body: "A dedicated outdoor space for your horse to move freely in a private setting." },
-    { title: "Shared paddock boarding", body: "A spacious outdoor environment with companionship and opportunities for socialization." },
-    { title: "Pasture boarding", body: "Open pasture space where your horse can graze, roam and enjoy a natural environment." },
-    { title: "Daily care & nutrition", body: "Quality hay, feeding routines and attentive daily care to support your horse's well-being." },
-    { title: "Additional care options", body: "Blanketing, medication assistance and other personalized care services based on your horse's needs." },
-  ],
+    { icon: "stall", title: "Indoor stall boarding", body: "A comfortable indoor space offering shelter, security and a dedicated place to rest." },
+    { icon: "paddock", title: "Private paddock boarding", body: "A dedicated outdoor space for your horse to move freely in a private setting." },
+    { icon: "herd", title: "Shared paddock boarding", body: "A spacious outdoor environment with companionship and opportunities for socialization." },
+    { icon: "pasture", title: "Pasture boarding", body: "Open pasture space where your horse can graze, roam and enjoy a natural environment." },
+    { icon: "feed", title: "Daily care & nutrition", body: "Quality hay, feeding routines and attentive daily care to support your horse's well-being." },
+    { icon: "care", title: "Additional care options", body: "Blanketing, medication assistance and other personalized care services based on your horse's needs." },
+  ] as { icon: BoardingIcon; title: string; body: string }[],
   availability: {
     label: "Limited boarding spaces available",
     title: "Your horse's second home.",
